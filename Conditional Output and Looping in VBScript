@@ -1,0 +1,12 @@
+Dim a: a = 1
+dim b: b = 2
+
+if a => 1 and b <= 3 Then
+	WScript.Echo("beta" &a)
+End if
+For c = 0 To a
+	WSH.echo("a is alpha" &c)
+Next 
+End 
+
+'cscript MyVBScriptEffort.vbs'
