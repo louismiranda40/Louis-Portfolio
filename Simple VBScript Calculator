@@ -1,0 +1,18 @@
+'******************************************************
+'Program name:               *
+'Author:   Louis Miranda           *
+'Purpose: Create a VBScript script that takes 3 parameters (numbers)            *
+'Discription: Basic WSH script written in NotePad++   *
+'How to run: cscript w2_first_lastName.vbs 1 2 3
+'Date Created:                               *
+'******************************************************
+
+fnum =  cint(WScript.arguments(0))		'Fnumb is a variable container 
+snum =  cint(WScript.arguments(1))		'Snumb is a variable container
+anum =  cint(WScript.arguments(2))		'Anumb is a Vairable container
+total = fnum + snum + anum			'total is a variable
+wscript.echo ("The total =" & total)		' & operator is concatenation operator to print number and strings together
+average = total / 3				'averge is a variable
+wscript.echo ("The Average =" & average)	' & operator is concatenation operator to print number and strings together
+
+'cscript MyVBScript02.vbs'
