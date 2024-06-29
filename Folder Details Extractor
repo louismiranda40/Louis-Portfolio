@@ -1,0 +1,40 @@
+'****************************************************************
+'Program name: w3_Louis_Miranda.vbs                      *
+'Author:      Louis Miranda                                 *
+'Purpose: to get the size, date created and name of a folder    *
+'Discription: Basic WSH script written in NotePad++             *
+'How to run: cscript w3_Louis_Miranda.vbs.exe "c:\entd261"
+'Date Created:     30OCT22                                   *
+'****************************************************************
+
+Dim FSO, fld, files, NewFile, rootParameter	'Declare variables and allocate space in memory
+
+Set FSO = CreatObject("Scripting.FileSystemObject") 'Set "fs" variable to an object
+rootParameter = Wscript.Argument.Item(0)	'Stores script parameter in "rootParameter" variable
+
+If rootParameter = "" Then	'Check if parameter was entered
+Wscript.Echo "No Parameter was entered"	'Error message if no parameter was specified
+Wscript.Quit	'Terminate the ScriptEngine
+End If
+
+Set NewFile = FSO.CreateTextFile(rootParameter&"\Results.txt", True) 'Create a text file Result.txt
+Set files = fld.Files	'Attach each file in the folder to variable "files"
+
+
+For each folderIdx In files	'Write for each file in the Folder.Copy
+NewFile.WriteLine("File name: " & folderIdx.Name)	'Write file size
+NewFile.writeLine("File size: " & folderIdx.Size & " bytes")	'Write file size
+NewFile.WriteLine("Date created: " & folderIdx.DateCreated)'Write date created 
+NewFile.WriteLine("____________")	'A line to visibly seperate each file 
+Next
+NewFile.Close
+
+
+For each folderIdx in files	'write for each file in the folder
+WScript.StdOut.WriteLine("File name: " & folderIdx.Name)	'Write file name
+WScript.StdOut.WriteLine("File size: " & folderIdx.Size & " bytes")	'Write file size
+WScript.StdOut.WriteLine("Date created: " & folderIdx.DateCreated)	'Write date created
+WScript.StdOut.WriteLine("______________________________________")	'A line to visibly seperate each file 
+Next
+NewFile.Close
+
